@@ -1,0 +1,42 @@
+*.py[cod]
+__pycache__
+
+# Temp files
+.*.sw[po]
+*~
+*.bak
+.DS_Store
+
+# Build and package files
+*.egg
+*.egg-info
+.bootstrap
+.build
+.cache
+.eggs
+.env
+.installed.cfg
+.ve
+bin
+build
+develop-eggs
+dist
+eggs
+lib
+lib64
+parts
+pip-wheel-metadata/
+pyvenv*/
+sdist
+var
+venv*/
+wheelhouse
+
+# IDE project files
+*.iml
+*.komodoproject
+.idea
+.project
+.pydevproject
+.venv
+.vscode
