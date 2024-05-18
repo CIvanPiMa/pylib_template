@@ -8,16 +8,18 @@
     "project_short_description": "TBD",
     "version": "0.0.0",
     "testing": ["TDD", "BDD"],
+    "use_cli": ["yes", "no"],
+    "ide": ["vscode", "other"],
     "license": [
-        "BSD 2-Clause License",
-        "BSD 3-Clause License",
+        "no",
         "MIT license",
         "ISC license",
+        "BSD 2-Clause License",
+        "BSD 3-Clause License",
         "Apache Software License 2.0",
-        "GNU Lesser General Public License v3 or later (LGPLv3+)",
         "GNU Lesser General Public License v3 (LGPLv3)",
-        "GNU Lesser General Public License v2.1 or later (LGPLv2+)",
         "GNU Lesser General Public License v2.1 (LGPLv2)",
-        "no"
+        "GNU Lesser General Public License v3 or later (LGPLv3+)",
+        "GNU Lesser General Public License v2.1 or later (LGPLv2+)"
     ]
 }

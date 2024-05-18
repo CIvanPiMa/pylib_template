@@ -1,11 +1,8 @@
 """
 Entrypoint module, for `python -m {{cookiecutter.repo_name}}`.
 
-
-Why does this file exist, and why __main__? For more info, read:
-
+# References:
 - https://www.python.org/dev/peps/pep-0338/
-- https://docs.python.org/2/using/cmdline.html#cmdoption-m
 - https://docs.python.org/3/using/cmdline.html#cmdoption-m
 """
 

@@ -10,13 +10,13 @@ git add README.md
 git commit -m "Initial commit"
 git remote add origin git@github.com:{{cookiecutter.repo_path}}/{{cookiecutter.repo_name}}.git
 git push -u origin {{cookiecutter.repo_main_branch}}
-
 ```
 
 - Finally, checkout to a development branch and push the initial project structure:
 
 ```shell
-git checkout -b feat/first-release
+BRANCH_NAME=feat/initial_project_release
+git checkout -b ${BRANCH_NAME}
 git add .
 git commit -m "feat: Add initial project structure"
 git push --set-upstream origin ${BRANCH_NAME}
@@ -31,7 +31,7 @@ git push --set-upstream origin ${BRANCH_NAME}
 ## Installation
 
 ```shell
-pip install {{cookiecutter.project_name}}
+pip install {{cookiecutter.repo_name}}
 ```
 
 ## Usage
@@ -46,7 +46,7 @@ Once you pull the repo, install the pre-commit hooks:
 pre-commit install --install-hooks
 ```
 
-Install the library as editable with the development dependencies:
+Install the library (in a virtual environment) as an editable package with the development dependencies:
 
 ```shell
 pip install -e ".[dev]"
@@ -62,4 +62,4 @@ pytest
 ```shell
 behave
 ```
-{%- endif -%}
+{%- endif %}
