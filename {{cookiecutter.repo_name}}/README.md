@@ -1,18 +1,30 @@
 # First steps
 
-- Create a new repository on GitHub with the name `{{cookiecutter.repo_name}}`.
+**GitHub**:
 
-- Then run the following commands to initialize the repository:
+- Create a [new repository](https://github.com/new) with the name `{{cookiecutter.repo_name}}`.
+- To enable the **doc** generation go to:
+  - Settings -> Pages -> Source: Github Actions
+
+**Local**:
+
+- Install the [pre-commit](https://pre-commit.com/#install) hooks:
 
 ```shell
-git init --initial-branch={{cookiecutter.repo_main_branch}}
+pre-commit install --install-hooks --hook-type commit-msg
+```
+
+- Initialize the repository:
+
+```shell
+git init --initial-branch={{cookiecutter.main_branch}}
 git add README.md
 git commit -m "Initial commit"
 git remote add origin git@github.com:{{cookiecutter.repo_path}}/{{cookiecutter.repo_name}}.git
-git push -u origin {{cookiecutter.repo_main_branch}}
+git push -u origin {{cookiecutter.main_branch}}
 ```
 
-- Finally, checkout to a development branch and push the initial project structure:
+- Use and push a development branch:
 
 ```shell
 BRANCH_NAME=feat/initial_project_release
@@ -40,7 +52,7 @@ pip install {{cookiecutter.repo_name}}
 
 ## Contributing
 
-Once you pull the repo, install the pre-commit hooks:
+Once cloned the repo, install the pre-commit hooks:
 
 ```shell
 pre-commit install --install-hooks

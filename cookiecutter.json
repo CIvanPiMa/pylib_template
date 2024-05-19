@@ -4,7 +4,7 @@
     "project_name": "My Amazing Project",
     "repo_name": "{{ cookiecutter.project_name.lower().replace(' ','_') }}",
     "repo_path": "CIvanPiMa",
-    "repo_main_branch": "main",
+    "main_branch": "main",
     "project_short_description": "TBD",
     "version": "0.0.0",
     "testing": ["TDD", "BDD"],
