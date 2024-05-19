@@ -46,11 +46,11 @@ dev = [
 
 #URLs ---*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*
 [project.urls]
-Homepage = "https://github.com/{{cookiecutter.repo_path}}/{{cookiecutter.repo_name}}.git"
-Documentation = "https://github.com/{{cookiecutter.repo_path}}/{{cookiecutter.repo_name}}/main/README.md"
-Repository = "https://github.com/{{cookiecutter.repo_path}}/{{cookiecutter.repo_name}}.git"
-Issues = "https://github.com/{{cookiecutter.repo_path}}/{{cookiecutter.repo_name}}/issues"
-Changelog = "https://github.com/{{cookiecutter.repo_path}}/{{cookiecutter.repo_name}}/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/{{cookiecutter.repo_path}}.git"
+Documentation = "https://{{ cookiecutter.username.lower() }}.github.io/{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}.html"
+Repository = "https://github.com/{{cookiecutter.repo_path}}.git"
+Issues = "https://github.com/{{cookiecutter.repo_path}}/issues"
+Changelog = "https://github.com/{{cookiecutter.repo_path}}/blob/main/CHANGELOG.md"
 
 #https://setuptools.pypa.io/en/latest/userguide/datafiles.html -*----*----*----*----*----*----*----*----*----*----*----*
 [tool.setuptools.package-data]
@@ -59,7 +59,7 @@ Changelog = "https://github.com/{{cookiecutter.repo_path}}/{{cookiecutter.repo_n
 # https://python-semantic-release.readthedocs.io/en/latest/configuration.html -*----*----*----*----*----*----*----*----*
 [tool.semantic_release]
 commit_message = "Release version: v{version}"
-version_variables = ["src/pylib_template_test/__init__.py:__version__"]
+version_variables = ["src/{{cookiecutter.repo_name}}/__init__.py:__version__"]
 
 [tool.semantic_release.branches.main]
 match = "(main|feat/initial_project_release)"
@@ -95,11 +95,11 @@ exclude = ["\\.*venv"]
 warn_return_any = true
 warn_unreachable = true
 
-{%- if cookiecutter.testing == "TDD" %}
+{% if cookiecutter.testing == "TDD" -%}
 #https://docs.pytest.org/en/stable/reference/customize.html ----*----*----*----*----*----*----*----*----*----*----*----*
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-{%- elif cookiecutter.testing == "BDD" %}
+{%- elif cookiecutter.testing == "BDD" -%}
 #https://behave.readthedocs.io/en/latest/behave/ *----*----*----*----*----*----*----*----*----*----*----*----*----*----*
 [tool.behave]
 format = "plain"
@@ -111,4 +111,4 @@ format = "plain"
 #Documentation ----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*----*
 #https://pdoc.dev/docs/pdoc.html#how-can-i
 #https://github.com/mitmproxy/pdoc/tree/main/examples
-#$ pdoc -o docs/ src/pylib_template_test
+#$ pdoc -o docs/ src/{{cookiecutter.repo_name}}

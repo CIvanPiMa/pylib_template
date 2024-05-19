@@ -20,7 +20,7 @@ pre-commit install --install-hooks --hook-type commit-msg
 git init --initial-branch={{cookiecutter.main_branch}}
 git add README.md
 git commit -m "Initial commit"
-git remote add origin git@github.com:{{cookiecutter.repo_path}}/{{cookiecutter.repo_name}}.git
+git remote add origin git@github.com:{{cookiecutter.repo_path}}.git
 git push -u origin {{cookiecutter.main_branch}}
 ```
 
@@ -39,6 +39,8 @@ git push --set-upstream origin ${BRANCH_NAME}
 # {{cookiecutter.project_name}}
 
 {{cookiecutter.project_short_description}}
+
+- [Docs](https://{{ cookiecutter.username.lower() }}.github.io/{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}.html).
 
 ## Installation
 
@@ -64,14 +66,27 @@ Install the library (in a virtual environment) as an editable package with the d
 pip install -e ".[dev]"
 ```
 
-And run the tests:
+### Documentation
 
-{%- if cookiecutter.testing == "TDD" %}
+- This library uses the [numpydoc](https://numpydoc.readthedocs.io/en/latest/format.html) format for the docstrings.
+- To generate the documentation, run:
+
+```shell
+pdoc src/{{cookiecutter.repo_name}} --mermaid --docformat numpy
+```
+
+### Testing
+
+To run the tests:
+
+{% if cookiecutter.testing == "TDD" -%}
 ```shell
 pytest
 ```
-{%- elif cookiecutter.testing == "BDD" %}
+{%- elif cookiecutter.testing == "BDD" -%}
 ```shell
 behave
 ```
 {%- endif %}
+
+new
