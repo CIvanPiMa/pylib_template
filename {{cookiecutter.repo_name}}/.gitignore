@@ -63,7 +63,8 @@ nosetests.xml
 .project
 .pydevproject
 .venv
-.vscode
+.vscode/*
+!.vscode/launch.json
 
 # Complexity
 output/*.html

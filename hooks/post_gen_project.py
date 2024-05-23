@@ -26,15 +26,12 @@ def remove(filepath: str):
 TEST_TYPE = "{{cookiecutter.testing}}"
 if TEST_TYPE == "TDD":
     remove(os.path.join(WORKING_DIR, "features"))
-    PROJECT_DIR = os.path.basename(WORKING_DIR)
 elif TEST_TYPE == "BDD":
     remove(os.path.join(WORKING_DIR, "tests"))
-    PROJECT_DIR = os.path.basename(WORKING_DIR)
 
 IDE = "{{cookiecutter.ide}}"
 if IDE != "vscode":
     remove(os.path.join(WORKING_DIR, ".vscode"))
-    PROJECT_DIR = os.path.basename(WORKING_DIR)
 
 CLI = "{{cookiecutter.use_cli}}"
 if CLI == "no":

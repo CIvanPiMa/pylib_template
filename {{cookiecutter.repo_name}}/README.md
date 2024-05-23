@@ -3,16 +3,10 @@
 **GitHub**:
 
 - Create a [new repository](https://github.com/new) with the name `{{cookiecutter.repo_name}}`.
-- To enable the **doc** generation go to:
+- Enable the **doc** generation in the repository:
   - Settings -> Pages -> Source: Github Actions
 
 **Local**:
-
-- Install the [pre-commit](https://pre-commit.com/#install) hooks:
-
-```shell
-pre-commit install --install-hooks --hook-type commit-msg
-```
 
 - Initialize the repository:
 
@@ -32,6 +26,12 @@ git checkout -b ${BRANCH_NAME}
 git add .
 git commit -m "feat: Add initial project structure"
 git push --set-upstream origin ${BRANCH_NAME}
+```
+
+- Install the pre-commit hooks:
+
+```shell
+pre-commit install --install-hooks --hook-type commit-msg
 ```
 
 ---
@@ -54,10 +54,10 @@ pip install {{cookiecutter.repo_name}}
 
 ## Contributing
 
-Once cloned the repo, install the pre-commit hooks:
+Once cloned the repo, install the [pre-commit](https://pre-commit.com/#install) hooks:
 
 ```shell
-pre-commit install --install-hooks
+pre-commit install --install-hooks --hook-type commit-msg
 ```
 
 Install the library (in a virtual environment) as an editable package with the development dependencies:
@@ -88,5 +88,3 @@ pytest
 behave
 ```
 {%- endif %}
-
-new

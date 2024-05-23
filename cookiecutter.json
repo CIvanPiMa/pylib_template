@@ -1,9 +1,9 @@
 {
     "full_name": "Ivan Pina",
     "email": "cs.ip.mt@gmail.com",
+    "username": "CIvanPiMa",
     "project_name": "My Amazing Project",
     "repo_name": "{{ cookiecutter.project_name.lower().replace(' ','_') }}",
-    "username": "CIvanPiMa",
     "repo_path": "{{ cookiecutter.username }}/{{ cookiecutter.repo_name }}",
     "main_branch": "main",
     "project_short_description": "TBD",

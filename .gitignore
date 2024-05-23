@@ -16,4 +16,5 @@ __pycache__
 .pydevproject
 .ruff_cache
 .venv
-.vscode
+.vscode/*
+!.vscode/launch.json
